@@ -17,3 +17,7 @@ Run : `npm start param1, param2, param3`
 Parameters can be location names or postal codes (US or CA)
 
 Run tests : `npm test`
+
+Links : 
+* OpenWeather current weather and forecasts free Api Key : https://openweathermap.org/price
+* Google Maps free Api Key : https://developers.google.com/maps/documentation/embed/get-api-key
