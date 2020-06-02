@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text mocha",
+    "start": "node src/main.js"
+  },
+  "devDependencies": {
+    "mocha": "^7.2.0",
+    "nyc": "^15.1.0"
+  },
+  "dependencies": {}
+}
