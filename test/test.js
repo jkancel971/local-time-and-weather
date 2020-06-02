@@ -4,8 +4,10 @@ const myArgs = require('../src/tools/inputArguments')
 const postalValidation = require('../src/tools/postalCodeValidation')
 const myLocation = require('../src/services/location')
 const myTime = require('../src/services/time')
+const myWeather = require('../src/services/weather')
 const googleLocationResult = require('./googleAnswerLocation')
 const googleTimeResult = require('./googleAnswerCurrentTime')
+const openWeatherResult = require('./openWeatherAnswer')
 
 describe('Tests', function() {
   describe('#getArguments()', function() {
@@ -57,6 +59,22 @@ describe('Tests', function() {
       const time = 
         await myTime.getTime(getApiAnswer,39.6034810,-119.6822510,date)
       assert.deepEqual(time, addHours(date,-8))
+    })
+  }),
+  describe('#getWeather()', function() {
+    it('should return the weather of the given coordinates', async function() {
+      const getApiAnswer = (latitude, longitude) => {
+        return new Promise((resolve,reject) => {
+          resolve(openWeatherResult.weatherResult)
+          reject("Weather test failed")
+        })
+      }
+      const weather = await 
+        myWeather.getWeather(getApiAnswer,139,35)
+      assert.deepEqual(weather, {
+        weather: "clear sky",
+        temperature: 281.52
+      })
     })
   })
 })
