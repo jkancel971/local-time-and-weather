@@ -1,10 +1,11 @@
 const assert = require('assert')
-const myWorld = require('../src/main')
+const myArgs = require('../src/tools/inputArguments')
 
-describe('helloWorld', function() {
-  describe('#helloWorld()', function() {
-    it('should return hello world', function() {
-      assert.equal(myWorld.helloWorld(), 'hello world')
+describe('Tests', function() {
+  describe('#getArguments()', function() {
+    it('should return arguments in input', function() {
+      const testExample = ["node.exe","src/main.js", "example 1,"]
+      assert.deepEqual(myArgs.getArguments(testExample), ['example 1'])
     })
   })
 })

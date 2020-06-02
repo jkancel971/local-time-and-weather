@@ -1,7 +1,8 @@
-const helloWorld = () => {
-  return 'hello world'
-}
+const _ = require("lodash")
+const input = require('./tools/inputArguments')
 
-console.log(helloWorld())
+const myArguments = input.getArguments(process.argv)
 
-exports.helloWorld = helloWorld
+_.forEach(myArguments, arg => {
+  console.log(arg)
+})
