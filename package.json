@@ -8,6 +8,7 @@
     "nyc": "^15.1.0"
   },
   "dependencies": {
+    "date-fns": "^2.14.0",
     "lodash": "^4.17.15",
     "zipcodes": "^8.0.0"
   }
